@@ -1,0 +1,3 @@
+anytime a new master image is built, bootstrap value in worker should be verified (ip address might change)
+
+The errors coming in the service log are probably because the daemon is expecting the localhost to be a master.

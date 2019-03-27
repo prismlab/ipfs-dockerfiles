@@ -1,0 +1,4 @@
+#!/bin/bash
+nohup ipfs daemon > ipfs_daemon.out &
+nohup ipfs-cluster-service daemon > ipfs_service_daemon.out &
+/bin/bash "$@"

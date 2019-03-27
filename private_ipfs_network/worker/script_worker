@@ -1,0 +1,6 @@
+#!/bin/bash
+ipfs init 
+nohup ipfs daemon > ipfs_daemon.out &
+ipfs-cluster-service init
+nohup ipfs-cluster-service daemon --bootstrap /ip4/172.17.0.7/tcp/9096/ipfs/QmUY3qDdcrB6VrPQ646uwA1xbwBHgTxg1JFrxQQzteGeaf > ipfs_service_daemon.out &
+/bin/bash "$@"
