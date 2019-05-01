@@ -7,7 +7,7 @@
       docker run -it <image hash> bash
   ```
  
-4. For worker nodes, give executable permission to the script already available in the container and run it:
+4. For worker nodes, check that the bootstrap address mentioned in script 'script_worker' (already present in the home directory) is same as cluster address exposed by the master. Give executable permission to the script and run it:
 ```
     chmod +x script_worker
     ./script_worker
