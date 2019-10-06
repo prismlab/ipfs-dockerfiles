@@ -1,0 +1,9 @@
+ipfs shutdown
+cp ~/.ipfs/swarm.key /folder/benchmark/
+rm -r ~/.ipfs/
+ipfs init --profile=badgerds
+cp /folder/benchmark/swarm.key ~/.ipfs/swarm.key
+IPFS_PATH=~/.ipfs ipfs bootstrap rm --all
+IPFS_PATH=~/.ipfs ipfs bootstrap add /ip4/172.17.0.15/tcp/4001/ipfs/QmS5tLGVLR3RbjEAFLhRdT1hNKUkegkene9AL7BcGeitZh
+export LIBP2P_FORCE_PNET=1
+IPFS_PATH=~/.ipfs ipfs daemon &

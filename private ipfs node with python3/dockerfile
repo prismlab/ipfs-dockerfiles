@@ -1,0 +1,18 @@
+FROM ubuntu:16.04
+RUN apt-get update && apt-get upgrade -y && apt install wget -y
+RUN ["apt-get", "install", "-y", "vim"]
+RUN apt-get install net-tools
+RUN wget https://dist.ipfs.io/go-ipfs/v0.4.19/go-ipfs_v0.4.19_linux-amd64.tar.gz
+RUN tar -zxvf go-ipfs_v0.4.19_linux-amd64.tar.gz && cp go-ipfs/ipfs /bin/
+COPY script .
+CMD chmod +x script
+RUN apt-get update
+RUN apt-get install software-properties-common -y 
+RUN add-apt-repository ppa:deadsnakes/ppa 
+RUN apt-get update
+RUN apt-get install python3.6 -y
+RUN apt install openssh-server -y
+RUN apt-get install python3-pip -y
+RUN pip3 install --upgrade pip==9.0.3
+RUN pip3 install numpy
+RUN pip3 install matplotlib
